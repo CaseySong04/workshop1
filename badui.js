@@ -1,0 +1,102 @@
+//const assistant = document.getElementById("assistant");
+
+//document.addEventListener("mousemove", function(e) {
+
+  //assistant.style.left = e.pageX + 20 + "px";
+  //assistant.style.top = e.pageY + 20 + "px";
+
+//});
+
+//this is selecting my "assistant" to control on the screen
+//const assistant = document.getElementById("assistant");
+
+//the coordinates and position
+//let x = 0;
+//let y = 0;
+
+
+//im applying the mousemove command to the assitant so that it moves when my mouse mvoes
+//document.addEventListener("mousemove", function(e) {
+
+    // the assistant is moving 10 percent of the distance making a laggy effect
+  //x += (e.pageX - x) * 0.1;
+  //y += (e.pageY - y) * 0.1;
+
+  //let offsetX = 20;
+  //let offsetY = 20;
+
+  //assistant.style.left = x + "px";
+  //assistant.style.top = y + "px";
+
+//});
+
+//this means whether hte mouse is on the page is tracked, true means its inside the page
+let mouseOnPage = false;
+
+document.addEventListener("mouseenter", () => { mouseOnPage = true; });
+document.addEventListener("mouseleave", () => { mouseOnPage = false; });
+
+const tips = [
+  "Tell me more!",
+  "That sounds fun!",
+  "What're you up to?",
+  "Journaling is good for relieving stress",
+  "don't stop typing!"
+];
+
+const assistant = document.getElementById("assistant");
+let x = 0, y = 0;
+let vx = 1, vy = 1;
+let targetX = 0, targetY = 0;
+
+// track mouse
+document.addEventListener("mousemove", function(e){
+  targetX = e.pageX + 10;
+  targetY = e.pageY + 10;
+});
+
+// animate assistant
+function animate(){
+  vx += (targetX - x) * 0.15;
+  vy += (targetY - y) * 0.15;
+  vx *= 0.75;
+  vy *= 0.75;
+  x += vx;
+  y += vy;
+
+  assistant.style.left = x + "px";
+  assistant.style.top = y + "px";
+
+  requestAnimationFrame(animate);
+}
+animate();
+
+// create popup tip
+function createTip(){
+  if(!mouseOnPage) return;
+
+  const tipText = tips[Math.floor(Math.random() * tips.length)];
+  const popup = document.createElement("div");
+  popup.className = "tip-popup";
+  popup.innerHTML = `<p>${tipText}</p><button>Close</button>`;
+
+  // position near frog
+  popup.style.left = (x + 40) + "px";
+  popup.style.top = (y - 20) + "px";
+
+  document.body.appendChild(popup);
+
+  popup.querySelector("button").addEventListener("click", () => popup.remove());
+
+
+}
+
+// random popup loop
+function randomTipLoop(){
+  createTip();
+  const randomTime = Math.random() * 2000 + 2000; //  2-4 se
+  setTimeout(randomTipLoop, randomTime);
+}
+randomTipLoop();
+
+
