@@ -1,0 +1,158 @@
+body{
+    margin:0;
+  background-image:url("gradient.jpg");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  font-family:Arial, sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  
+}
+
+/* journal card */
+
+.app{
+  width:650px;
+  background:white;
+  padding:35px;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  position:relative;
+
+}
+
+.app::after{
+  content:"";
+  position:absolute;
+  top: 0px;px;
+  right:60px;
+
+  width:55px;
+  height:90px;
+
+  background:#3c98ef;
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 75%,
+    50% 100%,
+    0 75%
+  );
+
+  box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+h1{
+  text-align:center;
+  color: #0e1442;
+}
+
+.toolbar{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:15px;
+  color:rgb(10, 62, 126);
+}
+
+textarea{
+   
+  width:100%;
+  height:250px;
+  padding:15px;
+  border:none;
+  background:#c9e4f2;
+  border-radius:10px;
+  font-size:16px;
+  box-sizing:border-box;
+  outline:none;
+  transition:all 0.2s ease;
+}
+
+
+textarea:focus{
+  background:white;
+  box-shadow:0 0 0 2px #7a8cff33;
+}
+
+.save{
+   margin-top:15px;
+  padding:10px 16px;
+  border:none;
+  border-radius:8px;
+  background:#7a8cff;
+  color:white;
+  cursor:pointer;
+  transition:all 0.15s ease;
+}
+
+.save:hover{
+  background:#6576ff;
+  transform:translateY(-2px);
+  box-shadow:0 5px 12px rgba(0,0,0,0.15);
+}
+
+/* assistant */
+
+.assistant{
+  position:absolute;
+  pointer-events:auto;
+}
+
+
+.pet{
+  
+  width:100px;
+  height:auto;
+
+}
+
+.tip{
+  background:white;
+  padding:10px 15px;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.15);
+  margin-bottom:10px;
+  width:180px;
+}
+
+.tip-popup{
+    position:absolute;
+  background:white;
+  padding:12px 14px;
+  border-radius: 25px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.15);
+  width:180px;
+  font: size 18px;
+
+}
+
+.tip-popup::after{
+  content:"";
+  position:absolute;
+  bottom:-8px;
+  left:20px;
+  width:16px;
+  height:16px;
+  background:white;
+  transform:rotate(45deg);
+  box-shadow:2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.tip-popup button{
+  margin-top:6px;
+  padding:4px 8px;
+  border:none;
+  background:#f35050;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+
+  
+
+  
