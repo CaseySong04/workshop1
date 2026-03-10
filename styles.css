@@ -1,0 +1,74 @@
+.body-text{
+    font-size: 16px;
+    color: black;
+    background-color: lavender;
+}
+.playwrite-us-trad-guides-regular {
+  font-family: "Playwrite US Trad Guides", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+h1{
+    font-size: 68px;
+    color: cornflowerblue;
+    font-weight: bold;
+}
+
+img{
+    border-radius: 50px;
+}
+.dog-image{
+    width: 50%;
+    height: auto;
+
+}
+
+
+section{
+    background-color: honeydew;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-section{
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+}
+
+.cta-button{
+    font-size: 24px;
+    background-color: aliceblue;
+    box-shadow: none;
+    padding: 2rem 3rem;
+    border-radius: 6px;
+    transition: 0.2s scale ease-in, 
+    0.4s background-color ease-in;
+    
+}
+
+/* .cta-button:hover{
+    
+    cursor: pointer;
+    animation: jackInTheBox;
+    animation-duration: 2s;
+} */
+
+.jackInTheBox-animation{
+     animation: jackInTheBox;
+    animation-duration: 2s;
+}
+
+.cta-button:focus{
+    background-color: aqua;
+}
+
+.opacity-0{
+    opacity:0;
+    transition:opacity .6s ease-out;
+}
+
